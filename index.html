@@ -1047,33 +1047,214 @@ footer{padding:22px 48px;border-top:1px solid var(--line);display:flex;justify-c
   <div class="wrap" style="padding-top:52px;padding-bottom:64px">
     <div class="contact-wrap">
       <div>
-        <form action="https://formspree.io/f/xdabadbk" method="POST">
-        <input type="hidden" name="_subject" value="Nueva consulta desde ricardoampuero.com">
-        <input type="hidden" name="_next" value="https://www.ricardoampuero.com">
-        <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:14px">¿Qué tipo de consulta es?</div>
-        <div class="opt-grid">
-          <div class="opt s-arb" id="o-arb" onclick="selOpt('arb')"><div class="opt-main">Designación</div><div class="opt-sub">como árbitro</div></div>
-          <div class="opt" id="o-ase" onclick="selOpt('ase')"><div class="opt-main">Asesoría legal</div><div class="opt-sub">caso / controversia</div></div>
-          <div class="opt" id="o-aca" onclick="selOpt('aca')"><div class="opt-main">Conferencia</div><div class="opt-sub">ponencia / panel</div></div>
-        </div>
-        <div><div class="fl">Nombre completo</div><input class="fi" type="text" name="nombre" placeholder="Tu nombre completo"></div>
-        <div class="form-row">
-          <div><div class="fl">Correo electrónico</div><input class="fi" type="email" name="email" placeholder="tu@correo.com"></div>
-          <div><div class="fl">Organización / firma</div><input class="fi" type="text" name="organizacion" placeholder="Empresa, firma o institución"></div>
-        </div>
-        <div><div class="fl">Institución arbitral (si aplica)</div><input class="fi" type="text" name="institucion" placeholder="CCL, CCI, CIADI, CARC-PUCP, ad hoc, otra…"></div>
-        <div class="form-row">
-          <div><div class="fl">Monto aproximado en controversia</div>
-            <select class="fi" name="monto"><option value="">Seleccionar rango</option><option>Menos de US$ 500K</option><option>US$ 500K – 2M</option><option>US$ 2M – 10M</option><option>US$ 10M – 50M</option><option>Más de US$ 50M</option><option>No aplica</option></select>
-          </div>
-          <div><div class="fl">Sector</div>
-            <select class="fi" name="sector"><option value="">Seleccionar</option><option>Infraestructura y concesiones</option><option>Energía e hidrocarburos</option><option>Minería</option><option>Construcción</option><option>Electricidad</option><option>Saneamiento</option><option>Transportes</option><option>Inversiones extranjeras</option><option>Otro</option></select>
-          </div>
-        </div>
-        <div><div class="fl">Descripción breve de la consulta</div><textarea class="fi" name="mensaje" placeholder="Describa brevemente la naturaleza de la controversia o consulta. La información se trata con estricta confidencialidad."></textarea></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px"><input type="checkbox" id="priv" style="margin-top:3px;flex-shrink:0"><label for="priv" style="font-size:12px;color:var(--muted);line-height:1.5;cursor:pointer">Acepto que la información se use exclusivamente para gestionar esta consulta, conforme a la política de privacidad.</label></div>
-        <button type="submit" class="btn-p" style="font-size:13px;padding:12px 26px">Enviar consulta</button>
-        </form>
+
+         <form id="contact-form" action="https://formspree.io/f/xdabadbk" method="POST">
+         
+           <input type="hidden" name="_subject" value="Nueva consulta desde ricardoampuero.com">
+         
+           <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:14px">
+             ¿Qué tipo de consulta es?
+           </div>
+         
+           <div class="opt-grid">
+             <div class="opt s-arb" id="o-arb" onclick="selOpt('arb')">
+               <div class="opt-main">Designación</div>
+               <div class="opt-sub">como árbitro</div>
+             </div>
+         
+             <div class="opt" id="o-ase" onclick="selOpt('ase')">
+               <div class="opt-main">Asesoría legal</div>
+               <div class="opt-sub">caso / controversia</div>
+             </div>
+         
+             <div class="opt" id="o-aca" onclick="selOpt('aca')">
+               <div class="opt-main">Conferencia</div>
+               <div class="opt-sub">ponencia / panel</div>
+             </div>
+           </div>
+         
+           <div>
+             <div class="fl">Nombre completo</div>
+             <input
+               class="fi"
+               type="text"
+               name="nombre"
+               placeholder="Tu nombre completo"
+             >
+           </div>
+         
+           <div class="form-row">
+             <div>
+               <div class="fl">Correo electrónico</div>
+               <input
+                 class="fi"
+                 type="email"
+                 name="email"
+                 placeholder="tu@correo.com"
+               >
+             </div>
+         
+             <div>
+               <div class="fl">Organización / firma</div>
+               <input
+                 class="fi"
+                 type="text"
+                 name="organizacion"
+                 placeholder="Empresa, firma o institución"
+               >
+             </div>
+           </div>
+         
+           <div>
+             <div class="fl">Institución arbitral (si aplica)</div>
+         
+             <input
+               class="fi"
+               type="text"
+               name="institucion"
+               placeholder="CCL, CCI, CIADI, CARC-PUCP, ad hoc, otra…"
+             >
+           </div>
+         
+           <div class="form-row">
+         
+             <div>
+               <div class="fl">Monto aproximado en controversia</div>
+         
+               <select class="fi" name="monto">
+                 <option value="">Seleccionar rango</option>
+                 <option>Menos de US$ 500K</option>
+                 <option>US$ 500K – 2M</option>
+                 <option>US$ 2M – 10M</option>
+                 <option>US$ 10M – 50M</option>
+                 <option>Más de US$ 50M</option>
+                 <option>No aplica</option>
+               </select>
+             </div>
+         
+             <div>
+               <div class="fl">Sector</div>
+         
+               <select class="fi" name="sector">
+                 <option value="">Seleccionar</option>
+                 <option>Infraestructura y concesiones</option>
+                 <option>Energía e hidrocarburos</option>
+                 <option>Minería</option>
+                 <option>Construcción</option>
+                 <option>Electricidad</option>
+                 <option>Saneamiento</option>
+                 <option>Transportes</option>
+                 <option>Inversiones extranjeras</option>
+                 <option>Otro</option>
+               </select>
+             </div>
+         
+           </div>
+         
+           <div>
+             <div class="fl">Descripción breve de la consulta</div>
+         
+             <textarea
+               class="fi"
+               name="mensaje"
+               placeholder="Describa brevemente la naturaleza de la controversia o consulta. La información se trata con estricta confidencialidad."
+             ></textarea>
+           </div>
+         
+           <!-- Honeypot anti-spam -->
+           <input
+             type="text"
+             name="_gotcha"
+             tabindex="-1"
+             autocomplete="off"
+             style="display:none"
+           >
+         
+           <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px">
+         
+             <input
+               type="checkbox"
+               id="priv"
+               required
+               style="margin-top:3px;flex-shrink:0"
+             >
+         
+             <label
+               for="priv"
+               style="font-size:12px;color:var(--muted);line-height:1.5;cursor:pointer"
+             >
+               Acepto que la información se use exclusivamente para gestionar esta consulta,
+               conforme a la política de privacidad.
+             </label>
+         
+           </div>
+         
+           <button
+             id="submit-btn"
+             type="submit"
+             class="btn-p"
+             style="font-size:13px;padding:12px 26px"
+           >
+             Enviar consulta
+           </button>
+         
+           <!-- Status message -->
+           <div
+             id="form-status"
+             style="margin-top:14px;font-size:13px;color:var(--ase-dark)"
+           ></div>
+         
+         </form>
+         
+         <script>
+         document
+           .getElementById("contact-form")
+           .addEventListener("submit", async function(e) {
+         
+             e.preventDefault();
+         
+             const form = e.target;
+             const button = document.getElementById("submit-btn");
+             const status = document.getElementById("form-status");
+         
+             button.disabled = true;
+             button.style.opacity = "0.7";
+         
+             status.textContent = "Enviando...";
+         
+             try {
+         
+               const response = await fetch(form.action, {
+                 method: "POST",
+                 body: new FormData(form),
+                 headers: {
+                   "Accept": "application/json"
+                 }
+               });
+         
+               if (response.ok) {
+         
+                 status.textContent = "Mensaje enviado.";
+                 form.reset();
+         
+               } else {
+         
+                 status.textContent = "No se pudo enviar el mensaje.";
+         
+               }
+         
+             } catch (error) {
+         
+               status.textContent = "Error de conexión.";
+         
+             }
+         
+             button.disabled = false;
+             button.style.opacity = "1";
+         
+           });
+         </script>
+         
       </div>
       <div class="info-cards">
         <div class="ic"><div class="ic-l">Ubicación</div><div class="ic-v">Lima, Perú</div><div class="ic-s">Disponible para procesos internacionales</div></div>
